@@ -11,6 +11,17 @@ CREATE TABLE student (
 	grade integer not null
 );
 
+CREATE TABLE course (
+	id varchar(8) primary key,
+	name varchar(60) not null,
+	alias varchar(60),
+	fee integer,
+	lesson1 varchar(8),
+	lesson2 varchar(8),
+	lesson3 varchar(8),
+	lesson4 varchar(8)
+);
+
 CREATE SEQUENCE lesson_id_seq
     INCREMENT BY 1
     MAXVALUE 99999999
