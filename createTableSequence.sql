@@ -1,3 +1,4 @@
+DROP TABLE lesson;
 CREATE TABLE lesson (
 	id varchar(8) primary key,
 	name varchar(60) not null,
@@ -5,21 +6,23 @@ CREATE TABLE lesson (
 	time integer not null
 );
 
+DROP TABLE student:
 CREATE TABLE student (
 	id varchar(8) primary key,
 	name varchar(60) not null,
 	grade integer not null,
 	school varchar(60),
-	parentsName varchar(60),
-	mailAddress varchar(60),
-	phoneNumber varchar(12),
-	zipCode varchar(8),
+	parents_name varchar(60),
+	mail_address varchar(60),
+	phone_number varchar(12),
+	zip_code varchar(8),
 	address varchar(60),
 	course varchar(8),
-	registeredDatetime timestamp,
-	updateDatetime timestamp
+	registered_datetime timestamp,
+	update_datetime timestamp
 );
 
+DROP TABLE course;
 CREATE TABLE course (
 	id varchar(8) primary key,
 	name varchar(60) not null,
@@ -31,8 +34,9 @@ CREATE TABLE course (
 	lesson4 varchar(8)
 );
 
+DROP TABLE grade;
 CREATE TABLE grade (
-	id smallest primary key,
+	id smallint primary key,
 	name varchar(6) not null
 );
 

@@ -20,4 +20,20 @@ INSERT INTO course VALUES ('00000008', 'LOGICTREE', 'LOGICTREE', '12000', '00000
 INSERT INTO course VALUES ('00000009', '東進衛星予備校', '東進', '40000', '00000011', '00000011', '', '');
 INSERT INTO course VALUES ('00000010', '東大個別指導会 T・MEG', 'TMEG', '29000', '00000009', '00000009', '', '');
 INSERT INTO course VALUES ('00000011', 'デイビッド・セイン英語ジムPremium 200分コース', 'セインPremium', '30000', '00000008', '00000008', '00000008', '00000008');
+INSERT INTO grade VALUES ('1', '年少');
+INSERT INTO grade VALUES ('2', '年中');
+INSERT INTO grade VALUES ('3', '年長');
+INSERT INTO grade VALUES ('4', '小１');
+INSERT INTO grade VALUES ('5', '小２');
+INSERT INTO grade VALUES ('6', '小３');
+INSERT INTO grade VALUES ('7', '小４');
+INSERT INTO grade VALUES ('8', '小５');
+INSERT INTO grade VALUES ('9', '小６');
+INSERT INTO grade VALUES ('10', '中１');
+INSERT INTO grade VALUES ('11', '中２');
+INSERT INTO grade VALUES ('12', '中３');
+INSERT INTO grade VALUES ('13', '高１');
+INSERT INTO grade VALUES ('14', '高２');
+INSERT INTO grade VALUES ('15', '高３');
+INSERT INTO grade VALUES ('16', '一般');
 
