@@ -6,18 +6,21 @@ CREATE TABLE lesson (
 	time integer not null
 );
 
-DROP TABLE student:
+DROP TABLE student;
 CREATE TABLE student (
 	id varchar(8) primary key,
 	name varchar(60) not null,
+	kana varchar(60) not null,
+	gender varchar(10),
 	grade integer not null,
+	birthday date,
 	school varchar(60),
 	parents_name varchar(60),
 	mail_address varchar(60),
 	phone_number varchar(12),
-	zip_code varchar(8),
+	zipcode varchar(7),
 	address varchar(60),
-	course varchar(8),
+	course varchar(8) not null,
 	registered_datetime timestamp,
 	update_datetime timestamp
 );
