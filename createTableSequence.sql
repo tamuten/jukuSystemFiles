@@ -111,7 +111,7 @@ CREATE TABLE m_subject (
 DROP TABLE IF EXISTS teacher_subject;
 CREATE TABLE teacher_subject (
 	teacher_id varchar(8) not null REFERENCES teacher(id),
-	subject_id varchar(4) not null REFERENCES subject(id)
+	subject_id varchar(4) not null REFERENCES m_subject(id)
 );
 
 CREATE SEQUENCE lesson_id_seq
