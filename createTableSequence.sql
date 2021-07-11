@@ -80,6 +80,40 @@ CREATE TABLE class_detail (
 	delete_flg boolean not null
 );
 
+DROP TABLE IF EXISTS teacher;
+CREATE TABLE teacher (
+	id varchar(8) primary key,
+	name varchar(30) not null,
+	kana varchar(60) not null,
+	gender varchar(10),
+	birthday date,
+	university varchar(60),
+	undergraduate varchar(60),
+	department varchar(60),
+	grade integer,
+	phone_number varchar(12),
+	mail_address varchar(60),
+	zipcode varchar(7),
+	address varchar(60),
+	note varchar(200),
+	delete_flg boolean not null,
+	registered_datetime timestamp,
+	update_datetime timestamp,
+	delete_datetime timestamp
+);
+
+DROP TABLE IF EXISTS m_subject;
+CREATE TABLE m_subject (
+	id varchar(4) primary key,
+	name varchar(20) not null
+);
+
+DROP TABLE IF EXISTS teacher_subject;
+CREATE TABLE teacher_subject (
+	teacher_id varchar(8) not null REFERENCES teacher(id),
+	subject_id varchar(4) not null REFERENCES subject(id)
+);
+
 CREATE SEQUENCE lesson_id_seq
     INCREMENT BY 1
     MAXVALUE 99999999
@@ -102,6 +136,13 @@ CREATE SEQUENCE classDetail_id_seq
 ;
 
 CREATE SEQUENCE classSchedule_id_seq
+	INCREMENT BY 1
+	MAXVALUE 99999999
+	START WITH 1
+	NO CYCLE
+;
+
+CREATE SEQUENCE teacher_id_seq
 	INCREMENT BY 1
 	MAXVALUE 99999999
 	START WITH 1
