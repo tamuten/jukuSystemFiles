@@ -5,21 +5,23 @@ INSERT INTO lesson VALUES ('00000004', 'パズル道場【数】', 'パズル【数】', '50')
 INSERT INTO lesson VALUES ('00000005', '反復演習ジムeトレ＆eドリル', '演習', '50');
 INSERT INTO lesson VALUES ('00000006', 'パズル道場【国語】', 'パズル【国】', '50');
 INSERT INTO lesson VALUES ('00000007', '東進中学NET', '中学ネット', '50');
-INSERT INTO lesson VALUES ('00000008', 'デイビッド・セイン英語ジム', 'セイン', '');
-INSERT INTO lesson VALUES ('00000009', '東大個別指導会T・MEG', 'TMEG', '');
-INSERT INTO lesson VALUES ('00000010', 'LOGICTREE', 'LOGICTREE', '');
-INSERT INTO lesson VALUES ('00000011', '東進衛星予備校', '東進', '');
-INSERT INTO course VALUES ('00000001', 'パズル道場 50分コース', 'パズル50', '11000', '00000003', '', '', '');
-INSERT INTO course VALUES ('00000002', 'パズル道場 100分コース', 'パズル100', '16000', '00000003', '00000004', '', '');
-INSERT INTO course VALUES ('00000003', 'パズル道場 150分コース', 'パズル150', '19000', '00000003', '00000004', '00000006', '');
-INSERT INTO course VALUES ('00000004', '東進中学NET', '東進中学ネット', '35000', '00000007', '00000007', '00000005', '');
-INSERT INTO course VALUES ('00000005', 'デイビッド・セイン英語ジムBasic 100分コース', 'セイン', '14000', '00000008', '00000008', '', '');
-INSERT INTO course VALUES ('00000006', 'デイビッド・セイン英語ジムStandard 100分コース', 'セイン', '14000', '00000008', '00000008', '', '');
-INSERT INTO course VALUES ('00000007', '反復演習ジムeトレ＆eドリル', '演習', '16000', '00000005', '00000005', '', '');
-INSERT INTO course VALUES ('00000008', 'LOGICTREE', 'LOGICTREE', '12000', '00000010', '', '', '');
-INSERT INTO course VALUES ('00000009', '東進衛星予備校', '東進', '40000', '00000011', '00000011', '', '');
-INSERT INTO course VALUES ('00000010', '東大個別指導会 T・MEG', 'TMEG', '29000', '00000009', '00000009', '', '');
+INSERT INTO lesson VALUES ('00000008', 'デイビッド・セイン英語ジム', 'セイン', NULL);
+INSERT INTO lesson VALUES ('00000009', '東大個別指導会T・MEG', 'TMEG', NULL);
+INSERT INTO lesson VALUES ('00000010', 'LOGICTREE', 'LOGICTREE', NULL);
+INSERT INTO lesson VALUES ('00000011', '東進衛星予備校', '東進', NULL);
+
+INSERT INTO course VALUES ('00000001', 'パズル道場 50分コース', 'パズル50', '11000', '00000003', NULL, NULL, NULL);
+INSERT INTO course VALUES ('00000002', 'パズル道場 100分コース', 'パズル100', '16000', '00000003', '00000004', NULL, NULL);
+INSERT INTO course VALUES ('00000003', 'パズル道場 150分コース', 'パズル150', '19000', '00000003', '00000004', '00000006', NULL);
+INSERT INTO course VALUES ('00000004', '東進中学NET', '東進中学ネット', '35000', '00000007', '00000007', '00000005', NULL);
+INSERT INTO course VALUES ('00000005', 'デイビッド・セイン英語ジムBasic 100分コース', 'セイン', '14000', '00000008', '00000008', NULL, NULL);
+INSERT INTO course VALUES ('00000006', 'デイビッド・セイン英語ジムStandard 100分コース', 'セイン', '14000', '00000008', '00000008', NULL, NULL);
+INSERT INTO course VALUES ('00000007', '反復演習ジムeトレ＆eドリル', '演習', '16000', '00000005', '00000005', NULL, NULL);
+INSERT INTO course VALUES ('00000008', 'LOGICTREE', 'LOGICTREE', '12000', '00000010', NULL, NULL, NULL);
+INSERT INTO course VALUES ('00000009', '東進衛星予備校', '東進', '40000', '00000011', '00000011', NULL, NULL);
+INSERT INTO course VALUES ('00000010', '東大個別指導会 T・MEG', 'TMEG', '29000', '00000009', '00000009', NULL, NULL);
 INSERT INTO course VALUES ('00000011', 'デイビッド・セイン英語ジムPremium 200分コース', 'セインPremium', '30000', '00000008', '00000008', '00000008', '00000008');
+
 INSERT INTO grade VALUES ('1', '年少');
 INSERT INTO grade VALUES ('2', '年中');
 INSERT INTO grade VALUES ('3', '年長');
@@ -44,7 +46,9 @@ INSERT INTO grade VALUES ('21', '５年');
 INSERT INTO grade VALUES ('22', '６年');
 INSERT INTO grade VALUES ('23', '院生');
 INSERT INTO grade VALUES ('24', '既卒');
-INSERT INTO m_timed VALUES ('1', '１限', '09:00', '10:20', 'True');
+
+
+INSERT INTO m_timed VALUES ('1', '１限', '9:00:00', '10:20:00', 'True');
 INSERT INTO m_timed VALUES ('2', '２限', NULL, NULL, 'True');
 INSERT INTO m_timed VALUES ('3', '３限', NULL, NULL, 'True');
 INSERT INTO m_timed VALUES ('4', '４限', NULL, NULL, 'True');
@@ -54,4 +58,25 @@ INSERT INTO m_timed VALUES ('7', '７限', NULL, NULL, 'True');
 INSERT INTO m_timed VALUES ('8', '８限', NULL, NULL, 'True');
 INSERT INTO m_timed VALUES ('9', '９限', NULL, NULL, 'True');
 INSERT INTO m_timed VALUES ('10', '１０限', NULL, NULL, 'True');
+
+INSERT INTO teacher VALUES ('00000001', '北川景子', 'キタガワケイコ', 'female', '1988/09/06', '慶應義塾大学', '経済学部', '経済学科', '17', '09012345678', 'keiko@gmail.com', '1589999', '東京都千代田区六番町', '女優です。既婚者。', 'False', '2021/7/13', NULL, NULL);
+INSERT INTO teacher VALUES ('00000002', 'DAIGO', 'DAIGO', 'male', '1983/09/12', '東京大学', '建築学部', '建築学科', '20', '08012345678', 'daigo@gmail.com', '1589999', '東京都千代田区六番町', '芸人', 'False', '2021/7/13', NULL, NULL);
+
+INSERT INTO m_subject VALUES ('0001', '小学算数');
+INSERT INTO m_subject VALUES ('0002', '小学国語');
+INSERT INTO m_subject VALUES ('0003', '小学理科');
+INSERT INTO m_subject VALUES ('0004', '小学社会');
+INSERT INTO m_subject VALUES ('0005', '中学受験算数');
+INSERT INTO m_subject VALUES ('0006', '中学受験国語');
+INSERT INTO m_subject VALUES ('0007', '中学受験理科');
+INSERT INTO m_subject VALUES ('0008', '中学受験社会');
+INSERT INTO m_subject VALUES ('0009', '中学英語');
+INSERT INTO m_subject VALUES ('0010', '中学数学');
+INSERT INTO m_subject VALUES ('0011', '中学国語');
+INSERT INTO m_subject VALUES ('0012', '中学理科');
+INSERT INTO m_subject VALUES ('0013', '中学社会');
+INSERT INTO m_subject VALUES ('0014', '高校英語');
+INSERT INTO m_subject VALUES ('0015', '数学Ⅰ・A');
+INSERT INTO m_subject VALUES ('0016', '数学Ⅱ・B');
+INSERT INTO m_subject VALUES ('0017', '数学Ⅲ');
 
