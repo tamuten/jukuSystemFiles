@@ -76,7 +76,7 @@ INSERT INTO m_subject VALUES ('0011', '’†Šw‘Œê');
 INSERT INTO m_subject VALUES ('0012', '’†Šw—‰È');
 INSERT INTO m_subject VALUES ('0013', '’†ŠwŽÐ‰ï');
 INSERT INTO m_subject VALUES ('0014', '‚Z‰pŒê');
-INSERT INTO m_subject VALUES ('0015', '”Šw‡TEA');
-INSERT INTO m_subject VALUES ('0016', '”Šw‡UEB');
-INSERT INTO m_subject VALUES ('0017', '”Šw‡V');
+INSERT INTO m_subject VALUES ('0015', '”Šw…ŸEA');
+INSERT INTO m_subject VALUES ('0016', '”Šw… EB');
+INSERT INTO m_subject VALUES ('0017', '”Šw…¡');
 
