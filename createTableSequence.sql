@@ -50,10 +50,14 @@ CREATE TABLE m_timed (
 
 DROP TABLE IF EXISTS m_timetable;
 CREATE TABLE m_timetable (
-	day varchar(2),
-	timed_id smallint,
-	opening_flg boolean not null,
-	primary key(day, timed_id)
+	timed_id smallint primary key,
+	monday boolean not null,
+	tuesday boolean not null,
+	wednesday boolean not null,
+	thursday boolean not null,
+	friday boolean not null,
+	saturday boolean not null,
+	sunday boolean not null
 );
 
 DROP TABLE IF EXISTS class_schedule;
