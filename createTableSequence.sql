@@ -30,12 +30,7 @@ DROP TABLE IF EXISTS course;
 CREATE TABLE course (
 	id varchar(8) primary key,
 	name varchar(60) not null,
-	alias varchar(60),
-	fee integer,
-	lesson1 varchar(8),
-	lesson2 varchar(8),
-	lesson3 varchar(8),
-	lesson4 varchar(8)
+	classTimes integer not null
 );
 
 DROP TABLE IF EXISTS grade;
