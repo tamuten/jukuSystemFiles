@@ -114,6 +114,16 @@ CREATE TABLE teacher_subject (
 	PRIMARY KEY(teacher_id, subject_id)
 );
 
+DROP TABLE IF EXISTS student_class;
+CREATE TABLE student_class (
+	student_id varchar(8)
+	,subject_id varchar(4)
+	,day_id integer
+	,timed_id integer
+	,teacher_id varchar(8)
+	,PRIMARY KEY(student_id, subject_id)
+);
+
 CREATE SEQUENCE lesson_id_seq
     INCREMENT BY 1
     MAXVALUE 99999999
