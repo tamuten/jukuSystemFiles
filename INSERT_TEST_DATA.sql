@@ -37,8 +37,11 @@ INSERT INTO grade VALUES ('20', '４年');
 INSERT INTO grade VALUES ('21', '５年');
 INSERT INTO grade VALUES ('22', '６年');
 INSERT INTO grade VALUES ('23', '院生');
-INSERT INTO grade VALUES ('24', '既卒');
+INSERT INTO grade VALUES ('24', '卒業');
 
+INSERT INTO student VALUES ('00000007', '町田 里歌', 'マチダ リカ', 'female', '10', '2002-04-01', '日本女子大学付属', '絵里', NULL, NULL, '1508001', '東京都新宿区市谷田町0-0-0', '00000001', '2021-07-09 23:14:38.386977', NULL, NULL);
+INSERT INTO student VALUES ('00000010', '髙橋 慶', 'タカハシ ケイ', 'male', '8', '2004-03-03', '愛日', '祐子', NULL, '07012345678', '1500001', '東京都新宿区市谷田町3-1', '00000002', '2021-07-09 23:34:03.237597', '2021-07-11 23:46:40.267513', NULL);
+INSERT INTO student VALUES ('00000011', '小室 葉留', 'コムロ ハル', 'female', '9', NULL, '愛日', NULL, 'komuro@xxx.jp', '0311112222', '1508111', '東京都新宿区市谷田町4-5', '00000003', '2021-07-11 23:39:15.45614', NULL, NULL);
 
 INSERT INTO m_timed VALUES ('1', '１限', '9:00:00', '10:20:00', 'True');
 INSERT INTO m_timed VALUES ('2', '２限', '10:30:00', '11:50:00', 'True');
@@ -60,12 +63,8 @@ INSERT INTO m_timetable VALUES ('6', 'true', 'true', 'true', 'true', 'true', 'tr
 INSERT INTO m_timetable VALUES ('7', 'true', 'true', 'true', 'true', 'true', 'true', 'false');
 INSERT INTO m_timetable VALUES ('8', 'true', 'true', 'true', 'true', 'true', 'true', 'false');
 
-INSERT INTO teacher VALUES ('00000001', '渡崎 真琴', 'ワタリザキ マコト', 'female', '1998-03-10', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'false', NULL, NULL, NULL);
-INSERT INTO teacher VALUES ('00000003', '田村 天', 'タムラ タカシ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'false', '2021-07-12 22:39:35.395808', NULL, NULL);
-INSERT INTO teacher VALUES ('00000004', '田村 天', 'タムラ タカシ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'false', '2021-07-12 22:40:09.321386', NULL, NULL);
-INSERT INTO teacher VALUES ('00000007', '齋藤 飛鳥', 'サイトウ アスカ', NULL, '1998-08-10', '早稲田大学', '法学部', '法律学科', '21', '07044448888', 'ashurin@nogizaka.co.jp', '1508001', '東京都渋谷区', '乃木坂の主役', 'false', '2021-07-14 02:50:13.302925', NULL, NULL);
 INSERT INTO teacher VALUES ('00000008', '齋藤 飛鳥', 'サイトウ アスカ', 'female', '1998-08-10', '早稲田大学', '法学部', '法律学科', '21', '07044448888', 'ashurin@nogizaka.co.jp', '1508001', '東京都渋谷区', '乃木坂の主役', 'false', '2021-07-14 02:51:33.544718', NULL, NULL);
-INSERT INTO teacher VALUES ('00000009', '白石 麻衣', 'シライシ マイ', 'female', '1992-08-20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'false', '2021-07-14 02:58:43.204408', NULL, NULL);
+INSERT INTO teacher VALUES ('00000009', '白石 麻衣', 'シライシ マイ', 'female', '1992-08-20', '慶應義塾大学', '経済学部', '経済学科', '24', '08012345678', 'shiraishi@nogizaka.co.jp', '1500001', '東京都港区', '乃木坂の主役', 'false', '2021-07-14 02:58:43.204408', NULL, NULL);
 INSERT INTO teacher VALUES ('00000010', '田中 一郎', 'タナカ イチロウ', 'male', '2001-04-01', '青山学院大学', '国際教養学部', NULL, '18', '09012334567', 'tanaka@xxx.co.jp', '5559999', '東京都渋谷区南青山', NULL, 'false', '2021-07-14 21:07:59.466879', NULL, NULL);
 
 INSERT INTO teacher_subject VALUES ('00000010', '0005');
@@ -75,6 +74,11 @@ INSERT INTO teacher_subject VALUES ('00000010', '0012');
 INSERT INTO teacher_subject VALUES ('00000010', '0015');
 INSERT INTO teacher_subject VALUES ('00000010', '0016');
 INSERT INTO teacher_subject VALUES ('00000010', '0017');
+INSERT INTO teacher_subject VALUES ('00000008', '0001');
+INSERT INTO teacher_subject VALUES ('00000008', '0002');
+INSERT INTO teacher_subject VALUES ('00000009', '0003');
+INSERT INTO teacher_subject VALUES ('00000009', '0004');
+INSERT INTO teacher_subject VALUES ('00000009', '0005');
 
 INSERT INTO m_subject VALUES ('0001', '小学算数');
 INSERT INTO m_subject VALUES ('0002', '小学国語');

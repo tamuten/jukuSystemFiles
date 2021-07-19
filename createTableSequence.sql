@@ -9,8 +9,8 @@ CREATE TABLE lesson (
 DROP TABLE IF EXISTS student;
 CREATE TABLE student (
 	id varchar(8) primary key,
-	name varchar(60) not null,
-	kana varchar(60) not null,
+	name varchar(61) not null,
+	kana varchar(61) not null,
 	gender varchar(10),
 	grade integer not null,
 	birthday date,
@@ -82,8 +82,8 @@ CREATE TABLE class_detail (
 DROP TABLE IF EXISTS teacher;
 CREATE TABLE teacher (
 	id varchar(8) primary key,
-	name varchar(30) not null,
-	kana varchar(60) not null,
+	name varchar(61) not null,
+	kana varchar(61) not null,
 	gender varchar(10),
 	birthday date,
 	university varchar(60),
