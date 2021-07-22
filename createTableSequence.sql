@@ -124,6 +124,14 @@ CREATE TABLE student_class (
 	,PRIMARY KEY(student_id, subject_id)
 );
 
+DROP TABLE IF EXISTS m_employee;
+CREATE TABLE m_employee (
+	id varchar(8) primary key
+	,name varchar(60) not null
+	,birthday date 
+	,role varchar(50)
+);
+
 CREATE SEQUENCE lesson_id_seq
     INCREMENT BY 1
     MAXVALUE 99999999
