@@ -72,10 +72,12 @@ CREATE TABLE class_schedule (
 DROP TABLE IF EXISTS class_detail;
 CREATE TABLE class_detail (
 	id varchar(8) primary key,
-	class_schedule_id varchar(8) not null,
+	date date not null,
+	timed_id smallint not null,
 	student_id varchar(8) not null,
 	subject_id varchar(4) not null,
-	seat_id varchar(4) not null,
+	teacher_id varchar(8) not null,
+	seat_id varchar(4),
 	delete_flg boolean not null
 );
 
@@ -116,12 +118,12 @@ CREATE TABLE teacher_subject (
 
 DROP TABLE IF EXISTS student_class;
 CREATE TABLE student_class (
-	student_id varchar(8)
+	id varchar(8) primary key
+	,student_id varchar(8)
 	,subject_id varchar(4)
 	,day_id integer
 	,timed_id integer
 	,teacher_id varchar(8)
-	,PRIMARY KEY(student_id, subject_id)
 );
 
 DROP TABLE IF EXISTS m_employee;
