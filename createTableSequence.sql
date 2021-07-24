@@ -63,9 +63,9 @@ CREATE TABLE m_timetable (
 DROP TABLE IF EXISTS class_schedule;
 CREATE TABLE class_schedule (
 	id varchar(8) primary key,
+	yearMonth varchar(7) not null,
+	day_id integer not null,
 	date date not null,
-	timed_id smallint not null,
-	teacher_id varchar(8) not null,
 	delete_flg boolean not null
 );
 
@@ -73,11 +73,7 @@ DROP TABLE IF EXISTS class_detail;
 CREATE TABLE class_detail (
 	id varchar(8) primary key,
 	date date not null,
-	timed_id smallint not null,
-	student_id varchar(8) not null,
-	subject_id varchar(4) not null,
-	teacher_id varchar(8) not null,
-	seat_id varchar(4),
+	student_class_id integer not null,
 	delete_flg boolean not null
 );
 
@@ -118,12 +114,13 @@ CREATE TABLE teacher_subject (
 
 DROP TABLE IF EXISTS student_class;
 CREATE TABLE student_class (
-	id varchar(8) primary key
+	id serial primary key
 	,student_id varchar(8)
 	,subject_id varchar(4)
 	,day_id integer
 	,timed_id integer
 	,teacher_id varchar(8)
+	,UNIQUE ( student_id, subject_id )
 );
 
 DROP TABLE IF EXISTS m_employee;
@@ -170,6 +167,13 @@ CREATE SEQUENCE teacher_id_seq
 ;
 
 CREATE SEQUENCE mEmployee_id_seq
+	INCREMENT BY 1
+	MAXVALUE 99999999
+	START WITH 1
+	NO CYCLE
+;
+
+CREATE SEQUENCE student_class_id_seq
 	INCREMENT BY 1
 	MAXVALUE 99999999
 	START WITH 1
