@@ -43,8 +43,8 @@ INSERT INTO student VALUES ('00000007', '町田 里歌', 'マチダ リカ', 'female', '1
 INSERT INTO student VALUES ('00000010', '髙橋 慶', 'タカハシ ケイ', 'male', '8', '2004-03-03', '愛日', '祐子', NULL, '07012345678', '1500001', '東京都新宿区市谷田町3-1', '00000002', '2021-07-09 23:34:03.237597', '2021-07-11 23:46:40.267513', NULL);
 INSERT INTO student VALUES ('00000011', '小室 葉留', 'コムロ ハル', 'female', '9', NULL, '愛日', NULL, 'komuro@xxx.jp', '0311112222', '1508111', '東京都新宿区市谷田町4-5', '00000003', '2021-07-11 23:39:15.45614', NULL, NULL);
 
-INSERT INTO m_employee VALUES ('00000001', '山田太郎', '1993-03-10', 'ROLE_ADMIN');
-INSERT INTO m_employee VALUES ('00000002', '田村達也', '1992-08-20', 'ROLE_GENERAL');
+INSERT INTO m_employee VALUES ('00000001', '山田太郎', '1993-03-10', 'ROLE_ADMIN', '$2a$10$xRTXvpMWly0oGiu65WZlm.3YL95LGVV2ASFjDhe6WF4.Qji1huIPa');
+INSERT INTO m_employee VALUES ('00000002', '田村達也', '1992-08-20', 'ROLE_GENERAL', NULL);
 
 INSERT INTO m_timed VALUES ('1', '１限', '9:00:00', '10:20:00', 'True');
 INSERT INTO m_timed VALUES ('2', '２限', '10:30:00', '11:50:00', 'True');
