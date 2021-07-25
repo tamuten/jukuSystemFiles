@@ -65,15 +65,18 @@ CREATE TABLE class_schedule (
 	id varchar(8) primary key,
 	yearMonth varchar(7) not null,
 	day_id integer not null,
-	date date not null,
+	date date not null unique,
 	delete_flg boolean not null
 );
 
 DROP TABLE IF EXISTS class_detail;
 CREATE TABLE class_detail (
-	id varchar(8) primary key,
+	id serial primary key,
 	date date not null,
-	student_class_id integer not null,
+	subject_id varchar(4),
+	timed_id integer,
+	teacher_id varchar(8),
+	student_class_id integer,
 	delete_flg boolean not null
 );
 
