@@ -1,3 +1,4 @@
+TRUNCATE TABLE lesson;
 INSERT INTO lesson VALUES ('1', 'test', 'test', '50');
 INSERT INTO lesson VALUES ('2', 'test', 'test', '1');
 INSERT INTO lesson VALUES ('00000003', 'パズル道場【図形・思考力】', 'パズル【図・思】', '50');
@@ -10,10 +11,12 @@ INSERT INTO lesson VALUES ('00000009', '東大個別指導会T・MEG', 'TMEG', NULL);
 INSERT INTO lesson VALUES ('00000010', 'LOGICTREE', 'LOGICTREE', NULL);
 INSERT INTO lesson VALUES ('00000011', '東進衛星予備校', '東進', NULL);
 
+TRUNCATE TABLE course;
 INSERT INTO course VALUES ('00000001', '週１回', '1');
 INSERT INTO course VALUES ('00000002', '週２回', '2');
 INSERT INTO course VALUES ('00000003', '週３回', '3');
 
+TRUNCATE TABLE grade;
 INSERT INTO grade VALUES ('1', '年少');
 INSERT INTO grade VALUES ('2', '年中');
 INSERT INTO grade VALUES ('3', '年長');
@@ -39,13 +42,18 @@ INSERT INTO grade VALUES ('22', '６年');
 INSERT INTO grade VALUES ('23', '院生');
 INSERT INTO grade VALUES ('24', '卒業');
 
+TRUNCATE TABLE student;
 INSERT INTO student VALUES ('00000007', '町田 里歌', 'マチダ リカ', 'female', '10', '2002-04-01', '日本女子大学付属', '絵里', NULL, NULL, '1508001', '東京都新宿区市谷田町0-0-0', '00000001', '2021-07-09 23:14:38.386977', NULL, NULL);
 INSERT INTO student VALUES ('00000010', '髙橋 慶', 'タカハシ ケイ', 'male', '8', '2004-03-03', '愛日', '祐子', NULL, '07012345678', '1500001', '東京都新宿区市谷田町3-1', '00000002', '2021-07-09 23:34:03.237597', '2021-07-11 23:46:40.267513', NULL);
 INSERT INTO student VALUES ('00000011', '小室 葉留', 'コムロ ハル', 'female', '9', NULL, '愛日', NULL, 'komuro@xxx.jp', '0311112222', '1508111', '東京都新宿区市谷田町4-5', '00000003', '2021-07-11 23:39:15.45614', NULL, NULL);
 
-INSERT INTO m_employee VALUES ('00000001', '山田太郎', '1993-03-10', 'ROLE_ADMIN', '$2a$10$xRTXvpMWly0oGiu65WZlm.3YL95LGVV2ASFjDhe6WF4.Qji1huIPa');
-INSERT INTO m_employee VALUES ('00000002', '田村達也', '1992-08-20', 'ROLE_GENERAL', NULL);
+TRUNCATE TABLE student_class;
 
+TRUNCATE TABLE m_employee;
+INSERT INTO m_employee VALUES ('00000001', '山田太郎', '1993-03-10', 'ROLE_ADMIN', '$2a$10$xRTXvpMWly0oGiu65WZlm.3YL95LGVV2ASFjDhe6WF4.Qji1huIPa');
+INSERT INTO m_employee VALUES ('00000002', '田村達也', '1992-08-20', 'ROLE_GENERAL', '00000002');
+
+TRUNCATE TABLE m_timed;
 INSERT INTO m_timed VALUES ('1', '１限', '9:00:00', '10:20:00', 'True');
 INSERT INTO m_timed VALUES ('2', '２限', '10:30:00', '11:50:00', 'True');
 INSERT INTO m_timed VALUES ('3', '３限', '13:00:00', '14:20:00', 'True');
@@ -57,6 +65,7 @@ INSERT INTO m_timed VALUES ('8', '８限', '20:30:00', '21:50:00', 'True');
 INSERT INTO m_timed VALUES ('9', '９限', NULL, NULL, 'False');
 INSERT INTO m_timed VALUES ('10', '１０限', NULL, NULL, 'False');
 
+TRUNCATE TABLE m_timetable;
 INSERT INTO m_timetable VALUES ('1', 'false', 'false', 'false', 'false', 'false', 'true', 'false');
 INSERT INTO m_timetable VALUES ('2', 'false', 'false', 'false', 'false', 'false', 'true', 'false');
 INSERT INTO m_timetable VALUES ('3', 'false', 'false', 'false', 'false', 'false', 'true', 'false');
@@ -66,10 +75,12 @@ INSERT INTO m_timetable VALUES ('6', 'true', 'true', 'true', 'true', 'true', 'tr
 INSERT INTO m_timetable VALUES ('7', 'true', 'true', 'true', 'true', 'true', 'true', 'false');
 INSERT INTO m_timetable VALUES ('8', 'true', 'true', 'true', 'true', 'true', 'true', 'false');
 
+TRUNCATE TABLE teacher;
 INSERT INTO teacher VALUES ('00000008', '齋藤 飛鳥', 'サイトウ アスカ', 'female', '1998-08-10', '早稲田大学', '法学部', '法律学科', '21', '07044448888', 'ashurin@nogizaka.co.jp', '1508001', '東京都渋谷区', '乃木坂の主役', 'false', '2021-07-14 02:51:33.544718', NULL, NULL);
 INSERT INTO teacher VALUES ('00000009', '白石 麻衣', 'シライシ マイ', 'female', '1992-08-20', '慶應義塾大学', '経済学部', '経済学科', '24', '08012345678', 'shiraishi@nogizaka.co.jp', '1500001', '東京都港区', '乃木坂の主役', 'false', '2021-07-14 02:58:43.204408', NULL, NULL);
 INSERT INTO teacher VALUES ('00000010', '田中 一郎', 'タナカ イチロウ', 'male', '2001-04-01', '青山学院大学', '国際教養学部', NULL, '18', '09012334567', 'tanaka@xxx.co.jp', '5559999', '東京都渋谷区南青山', NULL, 'false', '2021-07-14 21:07:59.466879', NULL, NULL);
 
+TRUNCATE TABLE teacher_subject;
 INSERT INTO teacher_subject VALUES ('00000010', '0005');
 INSERT INTO teacher_subject VALUES ('00000010', '0007');
 INSERT INTO teacher_subject VALUES ('00000010', '0010');
@@ -83,6 +94,7 @@ INSERT INTO teacher_subject VALUES ('00000009', '0003');
 INSERT INTO teacher_subject VALUES ('00000009', '0004');
 INSERT INTO teacher_subject VALUES ('00000009', '0005');
 
+TRUNCATE TABLE m_subject;
 INSERT INTO m_subject VALUES ('0001', '小学算数');
 INSERT INTO m_subject VALUES ('0002', '小学国語');
 INSERT INTO m_subject VALUES ('0003', '小学理科');
