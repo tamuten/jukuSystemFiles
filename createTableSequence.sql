@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS lesson;
+DROP TABLE IF EXISTS lesson CASCADE;
 CREATE TABLE lesson (
 	id varchar(8) primary key,
 	name varchar(60) not null,
@@ -6,7 +6,7 @@ CREATE TABLE lesson (
 	time integer not null
 );
 
-DROP TABLE IF EXISTS student;
+DROP TABLE IF EXISTS student CASCADE;
 CREATE TABLE student (
 	id varchar(8) primary key,
 	name varchar(61) not null,
@@ -26,20 +26,20 @@ CREATE TABLE student (
 	delete_flg boolean not null
 );
 
-DROP TABLE IF EXISTS course;
+DROP TABLE IF EXISTS course CASCADE;
 CREATE TABLE course (
 	id varchar(8) primary key,
 	name varchar(60) not null,
 	classTimes integer not null
 );
 
-DROP TABLE IF EXISTS grade;
+DROP TABLE IF EXISTS grade CASCADE;
 CREATE TABLE grade (
 	id smallint primary key,
 	name varchar(6) not null
 );
 
-DROP TABLE IF EXISTS m_timed;
+DROP TABLE IF EXISTS m_timed CASCADE;
 CREATE TABLE m_timed (
 	id smallint primary key,
 	name varchar(4) not null,
@@ -48,7 +48,7 @@ CREATE TABLE m_timed (
 	use_flag boolean not null
 );
 
-DROP TABLE IF EXISTS m_timetable;
+DROP TABLE IF EXISTS m_timetable CASCADE;
 CREATE TABLE m_timetable (
 	timed_id smallint primary key,
 	monday boolean not null,
@@ -60,7 +60,7 @@ CREATE TABLE m_timetable (
 	sunday boolean not null
 );
 
-DROP TABLE IF EXISTS class_schedule;
+DROP TABLE IF EXISTS class_schedule CASCADE;
 CREATE TABLE class_schedule (
 	id varchar(8) primary key,
 	yearMonth varchar(7) not null,
@@ -69,18 +69,20 @@ CREATE TABLE class_schedule (
 	delete_flg boolean not null
 );
 
-DROP TABLE IF EXISTS class_detail;
+DROP TABLE IF EXISTS class_detail CASCADE;
 CREATE TABLE class_detail (
 	id serial primary key,
 	date date not null,
+	student_id varchar(8) not null,
 	subject_id varchar(4),
 	timed_id integer,
 	teacher_id varchar(8),
 	student_class_id integer,
+	report varchar(500),
 	delete_flg boolean not null
 );
 
-DROP TABLE IF EXISTS teacher;
+DROP TABLE IF EXISTS teacher CASCADE;
 CREATE TABLE teacher (
 	id varchar(8) primary key,
 	name varchar(61) not null,
@@ -102,20 +104,20 @@ CREATE TABLE teacher (
 	delete_datetime timestamp
 );
 
-DROP TABLE IF EXISTS m_subject;
+DROP TABLE IF EXISTS m_subject CASCADE;
 CREATE TABLE m_subject (
 	id varchar(4) primary key,
 	name varchar(20) not null
 );
 
-DROP TABLE IF EXISTS teacher_subject;
+DROP TABLE IF EXISTS teacher_subject CASCADE;
 CREATE TABLE teacher_subject (
 	teacher_id varchar(8) REFERENCES teacher(id),
 	subject_id varchar(4) REFERENCES m_subject(id),
 	PRIMARY KEY(teacher_id, subject_id)
 );
 
-DROP TABLE IF EXISTS student_class;
+DROP TABLE IF EXISTS student_class CASCADE;
 CREATE TABLE student_class (
 	id serial primary key
 	,student_id varchar(8)
@@ -126,14 +128,16 @@ CREATE TABLE student_class (
 	,UNIQUE ( student_id, subject_id )
 );
 
-DROP TABLE IF EXISTS m_employee;
+DROP TABLE IF EXISTS m_employee CASCADE;
 CREATE TABLE m_employee (
 	id varchar(8) primary key
 	,name varchar(60) not null
 	,birthday date 
 	,role varchar(50)
+	,password varchar(60)
 );
 
+DROP SEQUENCE IF EXISTS lesson_id_seq CASCADE;
 CREATE SEQUENCE lesson_id_seq
     INCREMENT BY 1
     MAXVALUE 99999999
@@ -141,6 +145,7 @@ CREATE SEQUENCE lesson_id_seq
     NO CYCLE
 ;
 
+DROP SEQUENCE IF EXISTS student_id_seq CASCADE;
 CREATE SEQUENCE student_id_seq
 	INCREMENT BY 1
 	MAXVALUE 99999999
@@ -148,6 +153,7 @@ CREATE SEQUENCE student_id_seq
 	NO CYCLE
 ;
 
+DROP SEQUENCE IF EXISTS classDetail_id_seq CASCADE;
 CREATE SEQUENCE classDetail_id_seq
 	INCREMENT BY 1
 	MAXVALUE 99999999
@@ -155,6 +161,7 @@ CREATE SEQUENCE classDetail_id_seq
 	NO CYCLE
 ;
 
+DROP SEQUENCE IF EXISTS classSchedule_id_seq CASCADE;
 CREATE SEQUENCE classSchedule_id_seq
 	INCREMENT BY 1
 	MAXVALUE 99999999
@@ -162,6 +169,7 @@ CREATE SEQUENCE classSchedule_id_seq
 	NO CYCLE
 ;
 
+DROP SEQUENCE IF EXISTS teacher_id_seq CASCADE;
 CREATE SEQUENCE teacher_id_seq
 	INCREMENT BY 1
 	MAXVALUE 99999999
@@ -169,6 +177,7 @@ CREATE SEQUENCE teacher_id_seq
 	NO CYCLE
 ;
 
+DROP SEQUENCE IF EXISTS mEmployee_id_seq CASCADE;
 CREATE SEQUENCE mEmployee_id_seq
 	INCREMENT BY 1
 	MAXVALUE 99999999
@@ -176,6 +185,7 @@ CREATE SEQUENCE mEmployee_id_seq
 	NO CYCLE
 ;
 
+DROP SEQUENCE IF EXISTS student_class_id_seq CASCADE;
 CREATE SEQUENCE student_class_id_seq
 	INCREMENT BY 1
 	MAXVALUE 99999999
