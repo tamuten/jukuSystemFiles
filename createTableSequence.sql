@@ -137,6 +137,15 @@ CREATE TABLE m_employee (
 	,password varchar(60)
 );
 
+DROP TABLE IF EXISTS attend_leave CASCADE;
+CREATE TABLE attend_leave (
+	id serial primary key
+	,student_id varchar(8) not null REFERENCES student(id)
+	,date date not null
+	,attend_datetime timestamp
+	,leave_datetime timestamp
+);
+
 DROP SEQUENCE IF EXISTS lesson_id_seq CASCADE;
 CREATE SEQUENCE lesson_id_seq
     INCREMENT BY 1
